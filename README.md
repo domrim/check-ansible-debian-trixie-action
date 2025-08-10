@@ -1,18 +1,18 @@
-[![Github Marketplace](https://raw.githubusercontent.com/roles-ansible/check-ansible-debian-bookworm-action/main/.github/marketplace.svg?sanitize=true)](https://github.com/marketplace/actions/check-ansible-debian-bookworm)
-[![MIT License](https://raw.githubusercontent.com/roles-ansible/check-ansible-debian-bookworm-action/main/.github/license.svg?sanitize=true)](https://github.com/roles-ansible/check-ansible-debian-bookworm-action/blob/main/LICENSE)
+[![Github Marketplace](https://raw.githubusercontent.com/domrim/check-ansible-debian-trixie-action/main/.github/marketplace.svg?sanitize=true)](https://github.com/marketplace/actions/check-ansible-debian-trixie)
+[![MIT License](https://raw.githubusercontent.com/domrim/check-ansible-debian-trixie-action/main/.github/license.svg?sanitize=true)](https://github.com/domrim/check-ansible-debian-trixie-action/blob/main/LICENSE)
 
- Check Ansible Debian bookworm
+ Check Ansible Debian trixie
 =======================
-This action allows you to test your ansible role or your playbook in a Docker Container with ``debian:bookworm``.
+This action allows you to test your ansible role or your playbook in a Docker Container with ``debian:trixie``.
 
 ## Usage
-To use the action simply create an ``ansible-debian-bookworm.yml`` *(or choose custom ``*.yml`` name)* in the ``.github/workflows/`` directory.
+To use the action simply create an ``ansible-debian-trixie.yml`` *(or choose custom ``*.yml`` name)* in the ``.github/workflows/`` directory.
 
 For example:
 
 ```yaml
 ---
-name: Ansible check debian:bookworm  # feel free to pick your own name
+name: Ansible check debian:trixie  # feel free to pick your own name
 
 # yamllint disable-line rule:truthy
 on: [push, pull_request]
@@ -27,9 +27,9 @@ jobs:
       - name: Checkout git repo
         uses: actions/checkout@v3
 
-      - name: ansible check with debian:bookworm
-        # optionally replace "v1" with any valid git ref (branch, release, commit...)
-        uses: roles-ansible/check-ansible-debian-latest-action@v1
+      - name: ansible check with debian:trixie
+        # optionally replace "main" with any valid git ref (branch, release, commit...)
+        uses: domrim/domrim-check-ansible-debian-latest-action@main
         with:
           targets: "/github/workspace"
           #  [required]
